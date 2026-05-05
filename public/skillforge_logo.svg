@@ -1,0 +1,54 @@
+<svg width="100%" viewBox="0 0 680 320" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">SkillForge Logo</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Elegant logo for SkillForge, a course selling platform, with a flame-anvil emblem and gradient typography</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="anvilGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Emblem background circle -->
+  <circle cx="200" cy="160" r="88" fill="none" stroke="url(#brandGrad)" stroke-width="1.5" opacity="0.3" style="fill:none;color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.3;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="200" cy="160" r="76" fill="none" stroke="url(#brandGrad)" stroke-width="0.5" opacity="0.2" style="fill:none;color:rgb(255, 255, 255);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.2;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Anvil base -->
+  <rect x="163" y="187" width="74" height="12" rx="3" fill="url(#anvilGrad)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="173" y="199" width="54" height="7" rx="2" fill="#db2777" opacity="0.7" style="fill:rgb(219, 39, 119);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Anvil top body -->
+  <path d="M158 187 L168 170 L232 170 L242 187 Z" fill="url(#anvilGrad)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Anvil horn (left) -->
+  <path d="M158 178 Q145 175 140 182 Q145 185 158 183 Z" fill="#f97316" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Flame shape -->
+  <path d="M200 85 C200 85 218 105 215 122 C228 108 225 92 218 82 C222 98 212 110 208 120 C215 103 210 90 200 85 Z" fill="url(#flameGrad)" opacity="0.9" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M200 95 C200 95 212 110 210 122 C218 112 216 100 212 93 C214 104 207 114 205 122 C210 110 207 98 200 95 Z" fill="white" opacity="0.25" style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.25;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Spark lines -->
+  <line x1="228" y1="148" x2="238" y2="140" stroke="url(#brandGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="233" y1="158" x2="245" y2="154" stroke="url(#brandGrad)" stroke-width="1" stroke-linecap="round" opacity="0.5" style="fill:rgb(0, 0, 0);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="170" y1="148" x2="160" y2="140" stroke="url(#brandGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.7" style="fill:rgb(0, 0, 0);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="165" y1="158" x2="153" y2="154" stroke="url(#brandGrad)" stroke-width="1" stroke-linecap="round" opacity="0.5" style="fill:rgb(0, 0, 0);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Brand name -->
+  <text x="312" y="148" font-family="Georgia, serif" font-size="52" font-weight="700" fill="url(#brandGrad)" text-anchor="middle" letter-spacing="1" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:52px;font-weight:700;text-anchor:middle;dominant-baseline:auto">SkillForge</text>
+
+  <!-- Decorative rule under name -->
+  <rect x="242" y="158" width="140" height="1" fill="url(#brandGrad)" opacity="0.5" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Tagline -->
+  <text x="312" y="182" font-family="Georgia, serif" font-size="13" font-weight="400" fill="url(#brandGrad)" text-anchor="middle" letter-spacing="4" opacity="0.8" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.8;font-family:Georgia, serif;font-size:13px;font-weight:400;text-anchor:middle;dominant-baseline:auto">MASTER YOUR CRAFT</text>
+</svg>

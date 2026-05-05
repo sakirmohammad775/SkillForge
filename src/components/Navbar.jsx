@@ -2,11 +2,12 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="bg-black text-white sticky top-0 z-50 border-b border-white/5 backdrop-blur-md bg-black/80">
+    <nav className="bg-black text-white sticky top-0 z-50 border-b border-white/5 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Brand / Logo - High Contrast Dark Mode Style */}
         <div className="flex items-center gap-2">
+          <img src="/skillforge_logo.svg" alt="logo" className="w-24 h-24" />
           <Link href="/" className="text-2xl font-black tracking-[0.2em] text-white uppercase">
             SKILL<span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent font-light">FORGE</span>
           </Link>
