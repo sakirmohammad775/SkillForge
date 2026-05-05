@@ -38,7 +38,7 @@ const CourseSection = () => {
   ];
     return (
         <>
-         <div className="grid md:grid-cols-2 gap-6 p-10">
+         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 p-10">
       {courses.map((course) => (
         <CourseCard key={course.id} course={course} />
       ))}

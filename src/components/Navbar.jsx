@@ -1,73 +1,58 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
-  // 👉 Replace later with real auth
-  const user = null; // or { name: "Safayet" }
-
   return (
-    <header className="sticky top-0 z-50  border-b">
-      <nav className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <nav className="bg-black text-white sticky top-0 z-50 border-b border-white/5 backdrop-blur-md bg-black/80">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        
+        {/* Brand / Logo - High Contrast Dark Mode Style */}
+        <div className="flex items-center gap-2">
+          <Link href="/" className="text-2xl font-black tracking-[0.2em] text-white uppercase">
+            SKILL<span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent font-light">FORGE</span>
+          </Link>
+        </div>
 
-        {/* Logo */}
-        <Link href="/" className="text-xl font-bold">
-          SkillForge
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
-          <Link href="/" className="hover:text-gray-600">Home</Link>
-          <Link href="/courses" className="hover:text-gray-600">Courses</Link>
-          <Link href="/about" className="hover:text-gray-600">About</Link>
-          <Link href="/contact" className="hover:text-gray-600">Contact Us</Link>
-
-          {user ? (
-            <Link href="/dashboard" className="bg-black text-white px-4 py-2 rounded">
-              Dashboard
+        {/* Navigation Links - Clean, uppercase, and muted */}
+        <div className="hidden md:flex items-center gap-10 text-[10px] font-bold tracking-[0.2em] uppercase">
+          <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+            Home
+          </Link>
+          <Link href="/courses" className="text-gray-400 hover:text-white transition-colors">
+            Courses
+          </Link>
+          <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
+            About
+          </Link>
+          <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
+            Contact Us
+          </Link>
+          
+          {/* Action Buttons - Matching the All-in-One CTA Style */}
+          <div className="flex items-center gap-4 ml-6 border-l border-white/10 pl-10">
+            <Link 
+              href="/login" 
+              className="px-6 py-2 rounded-full border border-white/10 text-white hover:bg-white/5 transition-all text-[10px] font-black uppercase tracking-widest"
+            >
+              Login
             </Link>
-          ) : (
-            <>
-              <Link href="/login" className="border px-4 py-2 rounded">
-                Login
-              </Link>
-              <Link href="/register" className="bg-black text-white px-4 py-2 rounded">
-                Register
-              </Link>
-            </>
-          )}
+            <Link 
+              href="/register" 
+              className="px-6 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition-all shadow-lg shadow-white/5 text-[10px] font-black uppercase tracking-widest"
+            >
+              Register
+            </Link>
+          </div>
         </div>
 
-        {/* Mobile Button */}
-        <button onClick={() => setOpen(!open)} className="md:hidden">
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
-
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden px-4 pb-4 space-y-3">
-          <Link href="/" className="block">Home</Link>
-          <Link href="/courses" className="block">Courses</Link>
-          <Link href="/about" className="block">About</Link>
-
-          {user ? (
-            <Link href="/dashboard" className="block">Dashboard</Link>
-          ) : (
-            <>
-              <Link href="/login" className="block border px-3 py-2 rounded">Login</Link>
-              <Link href="/register" className="block bg-black text-white px-3 py-2 rounded">
-                Register
-              </Link>
-            </>
-          )}
+        {/* Mobile Menu Button */}
+        <div className="md:hidden text-white cursor-pointer p-2 hover:bg-white/5 rounded-lg transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </div>
-      )}
-    </header>
+
+      </div>
+    </nav>
   );
 };
 

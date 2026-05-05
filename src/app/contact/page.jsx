@@ -21,106 +21,132 @@ export default function Contact() {
 
     setError("");
     alert("Message sent successfully!");
-    
-    // reset form
     setForm({ name: "", email: "", message: "" });
   };
 
   return (
-    <div className="space-y-20">
-
-      {/* 🔥 HERO */}
-      <section className="bg-gray-50 py-20 text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Contact Us
+    <div className="bg-black text-white min-h-screen">
+      
+      {/* 🔥 HERO SECTION */}
+      <section className="relative py-24 overflow-hidden">
+        {/* Background Decorative Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-purple-900/20 to-transparent blur-[120px] pointer-events-none"></div>
+        
+        <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
+              Get In Touch
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-tight">
+            Let us <span className="bg-gradient-to-r from-pink-400 via-orange-300 to-purple-400 bg-clip-text text-transparent">Connect</span>
           </h1>
-          <p className="text-gray-500">
-            Have questions? We had love to hear from you.
+          <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+            Have questions about SkillForge? We’re here to help you build the future of development.
           </p>
         </div>
       </section>
 
-      {/* 🔥 CONTACT SECTION */}
-      <section className="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-2 gap-10">
+      {/* 🔥 CONTACT GRID */}
+      <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-16">
         
         {/* LEFT INFO */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold">Get in Touch</h2>
-          <p className="text-gray-600">
-            Reach out to us for any queries, support, or collaboration.
-          </p>
+        <div className="space-y-12">
+          <div>
+            <h2 className="text-3xl font-extrabold mb-6 tracking-tight">Contact Information</h2>
+            <p className="text-gray-500 leading-relaxed max-w-md">
+              Reach out to us for any queries, support, or potential collaboration. Our team typically responds within 24 hours.
+            </p>
+          </div>
 
-          <div className="space-y-2 text-sm text-gray-500">
-            <p>📧 Email: support@skillforge.com</p>
-            <p>📞 Phone: +880 1234-567890</p>
-            <p>📍 Location: Bangladesh</p>
+          <div className="space-y-6">
+            <div className="flex items-center gap-4 group">
+              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center group-hover:border-pink-500/50 transition-colors">
+                <span className="text-xl">📧</span>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Email Us</p>
+                <p className="text-white font-semibold">support@skillforge.com</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 group">
+              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center group-hover:border-orange-500/50 transition-colors">
+                <span className="text-xl">📞</span>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Call Us</p>
+                <p className="text-white font-semibold">+880 1234-567890</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 group">
+              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center group-hover:border-purple-500/50 transition-colors">
+                <span className="text-xl">📍</span>
+              </div>
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Location</p>
+                <p className="text-white font-semibold">Chattogram, Bangladesh</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* RIGHT FORM */}
+        {/* RIGHT FORM - GLASS CARD */}
         <form
           onSubmit={handleSubmit}
-          className="border rounded-xl p-6 space-y-4 shadow-sm"
+          className="bg-[#0f0f0f] border border-white/5 rounded-[2.5rem] p-8 md:p-10 space-y-6 shadow-2xl relative"
         >
-          <h3 className="text-lg font-semibold">Send Message</h3>
+          {/* Subtle Form Header */}
+          <h3 className="text-xl font-bold mb-2">Send a Message</h3>
 
-          {/* Name */}
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-black outline-none"
-            value={form.name}
-            onChange={(e) =>
-              setForm({ ...form, name: e.target.value })
-            }
-          />
+          <div className="space-y-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:ring-1 focus:ring-pink-500 outline-none text-white placeholder:text-gray-600 transition-all"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+            />
 
-          {/* Email */}
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-black outline-none"
-            value={form.email}
-            onChange={(e) =>
-              setForm({ ...form, email: e.target.value })
-            }
-          />
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:ring-1 focus:ring-pink-500 outline-none text-white placeholder:text-gray-600 transition-all"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+            />
 
-          {/* Message */}
-          <textarea
-            rows="4"
-            placeholder="Your Message"
-            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-black outline-none"
-            value={form.message}
-            onChange={(e) =>
-              setForm({ ...form, message: e.target.value })
-            }
-          />
+            <textarea
+              rows="5"
+              placeholder="Your Message"
+              className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:ring-1 focus:ring-pink-500 outline-none text-white placeholder:text-gray-600 transition-all resize-none"
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+            />
+          </div>
 
-          {/* Error */}
           {error && (
-            <p className="text-red-500 text-sm">{error}</p>
+            <p className="text-red-400 text-xs font-bold uppercase tracking-widest">{error}</p>
           )}
 
-          {/* Button */}
           <button
             type="submit"
-            className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 active:scale-95 transition"
+            className="w-full bg-white text-black py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-gray-200 active:scale-[0.98] transition-all shadow-xl shadow-white/5"
           >
-            Send Message
+            Send Message →
           </button>
         </form>
-
       </section>
 
-      {/* 🔥 MAP / EXTRA */}
-      <section className="bg-gray-50 py-16 text-center">
-        <h2 className="text-2xl font-bold mb-4">
-          Our Location
-        </h2>
-        <p className="text-gray-500">
-          We are based in Bangladesh and serve globally 🌍
+      {/* 🔥 MAP / EXTRA SECTION */}
+      <section className="py-24 text-center border-t border-white/5 mt-12 relative overflow-hidden">
+         {/* Decorative Glow */}
+         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-orange-900/10 blur-[120px] rounded-full"></div>
+
+        <h2 className="text-3xl font-extrabold mb-4 relative z-10">Global Presence</h2>
+        <p className="text-gray-500 max-w-lg mx-auto px-6 relative z-10 leading-relaxed text-sm md:text-base">
+          Headquartered in <span className="text-white font-bold">Bangladesh</span>, we support developers and students across 100+ countries 🌍
         </p>
       </section>
 
