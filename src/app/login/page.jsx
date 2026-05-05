@@ -14,7 +14,7 @@ const Login = () => {
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-orange-600/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       {/* Main Container */}
-      <div className="w-full max-w-6xl bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row border border-white/5 shadow-2xl relative z-10">
+      <div className=" w-full max-w-6xl bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row border border-white/5 shadow-2xl relative z-10">
         
         {/* LEFT SIDE: Brand Visual */}
         <div className="md:w-1/2 relative min-h-[400px] md:min-h-0 overflow-hidden border-r border-white/5">
