@@ -2,12 +2,10 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
+      { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
+  serverExternalPackages: ["mongoose"],
 };
 
 export default nextConfig;

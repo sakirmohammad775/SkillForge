@@ -2,19 +2,21 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const Navbar = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const [user, setUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+  // ── Re-read user on EVERY route change ──
   useEffect(() => {
     const stored = localStorage.getItem("user");
-    if (stored) setUser(JSON.parse(stored));
-  }, []);
+    setUser(stored ? JSON.parse(stored) : null);
+  }, [pathname]); // ← this is the key fix
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -27,7 +29,7 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close mobile menu on resize to desktop
+  // Close mobile menu on resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setMobileOpen(false);
@@ -37,11 +39,16 @@ const Navbar = () => {
   }, []);
 
   const handleLogout = () => {
+    // Step 1 - clear storage
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+
+    // Step 2 - clear state immediately
     setUser(null);
     setDropdownOpen(false);
     setMobileOpen(false);
+
+    // Step 3 - redirect
     router.push("/");
   };
 
@@ -60,11 +67,7 @@ const Navbar = () => {
 
             {/* ── LOGO ── */}
             <Link href="/" className="flex items-center gap-2 shrink-0">
-              <img
-                src="/skillforge_logo.svg"
-                alt="logo"
-                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12"
-              />
+              <img src="/skillforge_logo.svg" alt="logo" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
               <span className="text-lg sm:text-xl lg:text-2xl font-black tracking-[0.15em] text-white uppercase">
                 SKILL
                 <span className="bg-gradient-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent font-light">
@@ -156,38 +159,27 @@ const Navbar = () => {
                 </div>
               ) : (
                 <>
-                  <Link
-                    href="/login"
-                    className="px-5 py-2 rounded-full border border-white/10 text-white hover:bg-white/5 transition-all text-[10px] font-black uppercase tracking-widest"
-                  >
+                  <Link href="/login" className="px-5 py-2 rounded-full border border-white/10 text-white hover:bg-white/5 transition-all text-[10px] font-black uppercase tracking-widest">
                     Login
                   </Link>
-                  <Link
-                    href="/register"
-                    className="px-5 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition-all text-[10px] font-black uppercase tracking-widest"
-                  >
+                  <Link href="/register" className="px-5 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition-all text-[10px] font-black uppercase tracking-widest">
                     Register
                   </Link>
                 </>
               )}
             </div>
 
-            {/* ── TABLET (md) — show links, hide auth ── */}
+            {/* ── TABLET (md) ── */}
             <div className="hidden md:flex lg:hidden items-center gap-6 text-[10px] font-bold tracking-[0.2em] uppercase">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
+                <Link key={link.href} href={link.href} className="text-gray-400 hover:text-white transition-colors">
                   {link.label}
                 </Link>
               ))}
             </div>
 
-            {/* ── RIGHT SIDE: Avatar (md) + Hamburger (sm+md) ── */}
+            {/* ── RIGHT SIDE: Avatar (md) + Hamburger ── */}
             <div className="flex lg:hidden items-center gap-3">
-              {/* Show avatar on md when logged in */}
               {user && (
                 <div className="hidden md:flex relative" ref={dropdownRef}>
                   <button
@@ -261,12 +253,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* ── MOBILE MENU (sm only) ── */}
+        {/* ── MOBILE MENU ── */}
         {mobileOpen && (
           <div className="lg:hidden bg-[#0a0a0a] border-t border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col gap-1">
 
-              {/* User info — mobile */}
               {user && (
                 <div className="flex items-center gap-3 p-3 mb-2 rounded-xl bg-white/5 border border-white/5">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-orange-400 flex items-center justify-center text-white font-black shrink-0">
@@ -279,7 +270,6 @@ const Navbar = () => {
                 </div>
               )}
 
-              {/* Nav links */}
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
